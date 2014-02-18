@@ -31,7 +31,7 @@ describe Mail::Sendmail do
   end
 
   it 'spawns a sendmail process' do
-    described_class.should_receive(:popen).with /\A\/usr\/sbin\/sendmail/
+    IO.should_receive(:popen).with /\A\/usr\/sbin\/sendmail/
     mail.deliver!
   end
 
