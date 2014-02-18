@@ -61,7 +61,6 @@ module Mail
     def self.call(path, arguments, destinations, encoded_message)
       IO.popen "#{path} #{arguments} #{destinations}" do |io|
         io.puts encoded_message.to_lf
-        io.flush
       end
     end
   end
